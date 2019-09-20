@@ -1,23 +1,15 @@
-package com.cris.arrayLists.inicio;
+package com.cris.misListas.bean;
 
 public class Persona {
 
 	private String nombre;
 	private String apellidos;
-	private int telefono;
+	private String telefono;
 	private String ciudad;
 	private int edad;
 	private int peso;
 	
-	public Persona(String nombre, String apellidos, int telefono, String ciudad, int edad, int peso) {
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.telefono = telefono;
-		this.ciudad = ciudad;
-		this.edad = edad;
-		this.peso = peso;
-	}
-
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -26,7 +18,7 @@ public class Persona {
 		return apellidos;
 	}
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
@@ -42,12 +34,29 @@ public class Persona {
 		this.apellidos = apellidos;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
+	}
+	
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+	public int getPeso() {
+		return peso;
+	}
+
+	public void setPeso(int peso) {
+		this.peso = peso;
 	}
 
 	@Override
@@ -56,4 +65,5 @@ public class Persona {
 				+ ciudad + ", edad=" + edad + ", peso=" + peso + "]";
 	}
 
+	
 }
