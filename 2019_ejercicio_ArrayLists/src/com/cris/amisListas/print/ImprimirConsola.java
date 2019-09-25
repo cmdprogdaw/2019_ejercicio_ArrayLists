@@ -14,38 +14,43 @@ public class ImprimirConsola {
 	 */
 	public static void imprimirListaPersonas(ListaPersonas lista) {
 		
-		for(int i=0; i<lista.getElementos(); i++) {
+		System.out.println("\n\n**************");
+		for(int i=0;i<lista.getElementos();i++) {
 			
-			//probamos que no haya errores e imprimimos la informacion
+			// probamos que no haya errores e imprimimos la información
 			try {
 				
 				Persona persona = lista.getPersona(i);
-				
-				System.out.println("********************");
-				System.out.println(persona.getNombre());
+				imprimirPrivado(persona);	
 			} 
 			catch (FueraDeRangoException e) {
 			}
 			
 		}
 		
-		
-		
-		//permite imprimir la lista pasandola entera o pasando su iterador
-		/**
-		 * Imprime con un iterador
-		 * @param lista iterador de Persona
-		 */
-		public static void imprimirListaPersonas(Iterator<Persona> lista) {
+	}		
+	
+	
+	//permite imprimir la lista pasandola entera o pasando su iterador
+	/**		 * Imprime con un iterador
+	 * @param lista iterador de Persona
+	 */
+	public static void imprimirListaPersonas(Iterator<Persona> lista) {
 			
-			while (lista.hasNext()) {//pregunta si tiene elementos
-				
-				Persona persona =  lista.next();
-				System.out.println("********************");
-				System.out.println(persona.getNombre());
-			}
+		System.out.println("\n\n**************");
+		while (lista.hasNext()) {//pregunta si tiene elementos
 			
-			// lista.next()  dice que le de el siguiente elemento
+			Persona persona =  lista.next();
+			imprimirPrivado(persona);
+			
 		}
+			
+		// lista.next()  dice que le de el siguiente elemento
+	}
+		
+		
+		
+	private static void imprimirPrivado(Persona persona) {
+		System.out.println(persona.getNombre()+" > "+persona.getEdad()+" > "+persona.getPeso());
 	}
 }

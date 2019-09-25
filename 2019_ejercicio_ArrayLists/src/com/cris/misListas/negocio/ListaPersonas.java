@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 import com.cris.amisListas.error.FueraDeRangoException;
 import com.cris.misListas.bean.Persona;
+import com.cris.misListas.negocio.ordenador.OrdenadorPersonas;
 
 public class ListaPersonas{
 	
@@ -80,6 +81,11 @@ public class ListaPersonas{
 	
 	/*un iterador es una interfaz que es algo que tiene 
 	operaciones que me facilitan mi trabajo*/
+	/**
+	 * Devuelve un iterador sobre los elementos de la lista
+	 * 
+	 * @return 
+	 */
 	public Iterator<Persona> getPersonas() {
 		
 		return listaInterna.iterator();
@@ -87,6 +93,18 @@ public class ListaPersonas{
 	
 	
 	
+	
+	/*tira del arrayList para que se ordene, y necesita algo comparable, por lo que le paso mi clase 
+	que como implementa el comparator sabe como comparar personas*/
+	/**
+	 * Ordenador de la lista que necesita un Comparator para poder ordenarse
+	 * @param op Ordenador de personas que implementa el Comparator de java
+	 */
+	public void ordenar(OrdenadorPersonas op) {
+
+		listaInterna.sort(op);
+		
+	}
 	
 	
 	
