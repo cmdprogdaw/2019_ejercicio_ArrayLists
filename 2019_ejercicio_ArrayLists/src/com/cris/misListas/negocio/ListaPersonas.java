@@ -1,10 +1,11 @@
 package com.cris.misListas.negocio;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 
-import com.cris.amisListas.error.FueraDeRangoException;
 import com.cris.misListas.bean.Persona;
+import com.cris.misListas.error.FueraDeRangoException;
 import com.cris.misListas.negocio.ordenador.OrdenadorPersonas;
 
 public class ListaPersonas{
@@ -100,7 +101,7 @@ public class ListaPersonas{
 	 * Ordenador de la lista que necesita un Comparator para poder ordenarse
 	 * @param op Ordenador de personas que implementa el Comparator de java
 	 */
-	public void ordenar(OrdenadorPersonas op) {
+	public void ordenar(Comparator<Persona> op) {
 
 		listaInterna.sort(op);
 		

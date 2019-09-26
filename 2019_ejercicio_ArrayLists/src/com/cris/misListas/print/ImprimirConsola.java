@@ -1,9 +1,9 @@
-package com.cris.amisListas.print;
+package com.cris.misListas.print;
 
 import java.util.Iterator;
 
-import com.cris.amisListas.error.FueraDeRangoException;
 import com.cris.misListas.bean.Persona;
+import com.cris.misListas.error.FueraDeRangoException;
 import com.cris.misListas.negocio.ListaPersonas;
 
 public class ImprimirConsola {

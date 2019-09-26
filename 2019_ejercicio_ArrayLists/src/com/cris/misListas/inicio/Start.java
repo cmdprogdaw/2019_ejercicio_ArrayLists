@@ -1,10 +1,11 @@
-package com.cris.amisListas.inicio;
+package com.cris.misListas.inicio;
 
-import com.cris.amisListas.error.FueraDeRangoException;
-import com.cris.amisListas.print.ImprimirConsola;
 import com.cris.misListas.bean.Persona;
+import com.cris.misListas.error.FueraDeRangoException;
 import com.cris.misListas.negocio.ListaPersonas;
+import com.cris.misListas.negocio.ordenador.OrdenadorAscendenteDescendente;
 import com.cris.misListas.negocio.ordenador.OrdenadorPersonas;
+import com.cris.misListas.print.ImprimirConsola;
 
 public class Start {
 
@@ -45,14 +46,17 @@ public class Start {
 		
 		//primero lo imprime sin ordenar, luego ordenando por peso y por ultimo por edad
 		ImprimirConsola.imprimirListaPersonas(lista.getPersonas());
+
 		
-		OrdenadorPersonas op = new OrdenadorPersonas();
-		op.ordenatePeso();
-		lista.ordenar(op);
-		ImprimirConsola.imprimirListaPersonas(lista.getPersonas());
+		OrdenadorAscendenteDescendente OAD = new OrdenadorAscendenteDescendente();
+		OAD.setMetodoOrdenacionEdad(OrdenadorAscendenteDescendente.ORDENACION_DESCENDENTE);
+		OAD.setMetodoOrdenacionPeso(OrdenadorAscendenteDescendente.ORDENACION_DESCENDENTE);
 		
-		op.ordenateEdad();
-		lista.ordenar(op);
+		OrdenadorPersonas ordenadorPersonas = new OrdenadorPersonas();
+		ordenadorPersonas.ordenateEdad();
+
+		
+		lista.ordenar(ordenadorPersonas);
 		ImprimirConsola.imprimirListaPersonas(lista.getPersonas());
 		
 		

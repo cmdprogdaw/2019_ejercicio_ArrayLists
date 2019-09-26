@@ -1,4 +1,4 @@
-package com.cris.amisListas.error;
+package com.cris.misListas.error;
 
 public class FueraDeRangoException extends Exception {
 

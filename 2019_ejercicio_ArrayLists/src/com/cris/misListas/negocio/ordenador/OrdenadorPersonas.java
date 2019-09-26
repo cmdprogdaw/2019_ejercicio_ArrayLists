@@ -6,8 +6,6 @@ import com.cris.misListas.bean.Persona;
 
 public class OrdenadorPersonas implements Comparator<Persona> {
 
-	
-	
 	/*
 	 * CRITERIO DE ORDENACION
 	 * 
